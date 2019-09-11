@@ -73,4 +73,23 @@ public class JavaApplication1 {
         }
     }
     
+    public static void selectionSort(int[] n){
+        
+        for(int i = 0; i < n.length; i++){
+            int minimo = i;
+            for(int j = i+1; j < n.length; j++){
+                if(n[j] < n[minimo]){
+                    minimo = j;
+                }
+            }
+            int aux = n[i];
+            n[i] = n[minimo];
+            n[minimo] = aux;
+        }
+        
+        for(int k = 0; k < n.length; k++){
+            System.out.println(n[k]);
+        }
+    } 
+    
 }
