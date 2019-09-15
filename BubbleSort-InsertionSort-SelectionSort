@@ -43,9 +43,9 @@ public class JavaApplication1 {
         do{
             for(int i = 1; i < lista.length; i++){
                 if(lista[i] < lista[i-1]){
-                    int aux = lista[i];
+                    int aux = lista[i-1];
                     lista[i-1] = lista[i];
-                    lista[i-1] = aux;
+                    lista[i] = aux;
                 }
             }
             n--;
