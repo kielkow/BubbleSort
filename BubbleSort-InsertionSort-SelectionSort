@@ -92,4 +92,32 @@ public class JavaApplication1 {
         }
     } 
     
+    public static int[] countSort(int[] array) {
+        int maior = 0;
+        
+        for(int i = 0; i < array.length; i++){
+            if(array[i] > maior){
+                maior = array[i];
+            }
+        }
+        
+        int[] aux = new int[maior+1];
+
+        for (int i = 0; i < array.length; i++) {
+            aux[array[i]] += 1;
+        }
+
+        for (int i = 1; i < aux.length; i++) {
+            aux[i] += aux[i - 1];
+        }
+        
+        int[] out = new int[array.length];
+        
+        for (int i = 0; i < array.length; i++) {
+            out[i] = array[aux[array[i]]-1];
+        }
+        
+        return out;
+    }
+    
 }
